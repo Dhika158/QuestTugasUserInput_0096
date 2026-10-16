@@ -231,3 +231,27 @@ fun FormBiodata(modifier: Modifier = Modifier) {
         }
     }
 
+    //Dialog kalender untuk memilih tanggal lahir
+    if (bukaKalender) {
+        DatePickerDialog(
+            onDismissRequest = { bukaKalender = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    kalenderState.selectedDateMillis?.let {
+                        textTgl = SimpleDateFormat(formatTanggal, Locale.getDefault()).format(Date(it))
+                    }
+                    bukaKalender = false
+                }) {
+                    Text(text = stringResource(id = R.string.ok))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { bukaKalender = false }) {
+                    Text(text = stringResource(id = R.string.batal))
+                }
+            }
+        ) {
+            DatePicker(state = kalenderState)
+        }
+    }
+}
