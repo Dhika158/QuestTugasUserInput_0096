@@ -7,3 +7,5 @@
     <string name="email">Email</string>
     <string name="tgl_lahir">Tgl Lahir</string>
     <string name="experience">Experience</string>
+    <string name="exp_pertama">0 - 1 Tahun</string>
+    <string name="exp_kedua">1 - 3 Tahun</string>
