@@ -80,3 +80,24 @@ fun FormBiodata(modifier: Modifier = Modifier) {
     val teksWeb = stringResource(id = R.string.skill_web)
     val durasi = integerResource(id = R.integer.durasi_hasil).toLong()
 
+    //Card hasil disembunyikan lagi setelah 5 detik
+    LaunchedEffect(key1 = tampil) {
+        if (tampil) {
+            delay(timeMillis = durasi)
+            tampil = false
+        }
+    }
+
+    //Box putih yang mengapung di atas gambar dan Scaffold
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(
+                color = colorResource(id = R.color.putih),
+                shape = RoundedCornerShape(dimensionResource(id = R.dimen.radius_box))
+            )
+    ) {
+        Column(
+            modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_small)),
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small)),
+            horizontalAlignment = Alignment.CenterHorizontally
