@@ -42,3 +42,24 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormBiodata(modifier: Modifier = Modifier) {
+    //Variable-variable untuk mengingatkan nilai masukkan dari keyboard
+    var textNamaDepan by remember { mutableStateOf(value = "") }
+    var textNamaBelakang by remember { mutableStateOf(value = "") }
+    var textEmail by remember { mutableStateOf(value = "") }
+    var textTgl by remember { mutableStateOf(value = "") }
+    var textExp by remember { mutableStateOf(value = "") }
+    var cekAndroid by remember { mutableStateOf(value = false) }
+    var cekUiux by remember { mutableStateOf(value = false) }
+    var cekWeb by remember { mutableStateOf(value = false) }
+
+    //Variable-variable untuk menyimpan data yang diperoleh dari komponen UI
+    var nama by remember { mutableStateOf(value = "") }
+    var email by remember { mutableStateOf(value = "") }
+    var tgl by remember { mutableStateOf(value = "") }
+    var exp by remember { mutableStateOf(value = "") }
+    var skill by remember { mutableStateOf(value = "") }
+    var tampil by remember { mutableStateOf(value = false) }
+
