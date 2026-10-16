@@ -101,3 +101,28 @@ fun FormBiodata(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_small)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small)),
             horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = stringResource(id = R.string.judul_form),
+                style = MaterialTheme.typography.headlineMedium,
+                color = colorResource(id = R.color.biru_judul)
+            )
+            Text(
+                text = stringResource(id = R.string.subjudul_form),
+                color = colorResource(id = R.color.abu)
+            )
+            Row(horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small))) {
+                OutlinedTextField(
+                    value = textNamaDepan,
+                    singleLine = true,
+                    modifier = Modifier.weight(1f),
+                    label = { Text(text = stringResource(id = R.string.nama_depan)) },
+                    onValueChange = { textNamaDepan = it }
+                )
+                OutlinedTextField(
+                    value = textNamaBelakang,
+                    singleLine = true,
+                    modifier = Modifier.weight(1f),
+                    label = { Text(text = stringResource(id = R.string.nama_belakang)) },
+                    onValueChange = { textNamaBelakang = it }
+                )
